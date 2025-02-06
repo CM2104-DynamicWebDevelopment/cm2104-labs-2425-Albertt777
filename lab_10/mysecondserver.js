@@ -1,5 +1,5 @@
 var http = require ('http');
-var ourrentdata = require ('.mymodule');
+var ourrentdata = require ('./mymodule');
 
 http.createServer(function (req, res){
     res.writeHead(200, {'Content-Type': 'text/html'});
