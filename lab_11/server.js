@@ -30,4 +30,13 @@ app.post('/postform', function(eq, res){
     res.send ("Hi" +name+"I am sure you will "+quest);
 });
 
-app.use(express.urlencoded({extended:true}))
+
+app.get('/user/:userID/books/:bookid', function(req, res){
+    var userID = req.params.userID;
+    var userID = req.params.bookID;
+      res.send ("Hi" +name+"I am sure you will "+quest);
+}); 
+
+app.use(function (req, res, next){
+    res.send('This page does not exist!')
+})
