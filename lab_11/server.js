@@ -18,3 +18,16 @@ app.listen(8080);
 
 app.use(express.static('public'))
 
+app.get('/getform', function(req, res){
+    var name = req.query.name;
+    var quset = req.query.quest;
+      res.send ("Hi" +name+"I am sure you will "+quest);
+});
+
+app.post('/postform', function(eq, res){
+    var name = req.bnody.name;
+    var quest = req.body.quest; 
+    res.send ("Hi" +name+"I am sure you will "+quest);
+});
+
+app.use(express.urlencoded({extended:true}))
