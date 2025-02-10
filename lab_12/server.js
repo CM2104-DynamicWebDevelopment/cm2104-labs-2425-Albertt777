@@ -40,7 +40,7 @@ function (data) {
 
 );
 
-//rout for love in tracks, artists and albums 
+//rout for love in tracks, artists and album 
 app.get('/saerchLove', function (req, res){
     getTracks('love', res);
 });
