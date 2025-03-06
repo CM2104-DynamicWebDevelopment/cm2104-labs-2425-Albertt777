@@ -195,3 +195,22 @@ var datatostore = {
     res.redirect('/')
   })
 });
+
+app.get('/users', isAuthenticated, async (req, res) => {
+  try {
+    // Get the current user's information
+    const currentUser = await User.findById(req.user._id);
+    
+    // Get all users as before
+    const users = await User.find({});
+    
+    // Render the page with both the users list and current user info
+    res.render('users', { 
+      users: users,
+      currentUser: currentUser 
+    });
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Server error');
+  }
+});
