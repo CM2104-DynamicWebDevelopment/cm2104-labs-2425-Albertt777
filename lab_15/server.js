@@ -204,7 +204,7 @@ app.get('/users', isAuthenticated, async (req, res) => {
     // Get all users as before
     const users = await User.find({});
     
-    // Render the page with both the users list and current user info
+    // Renders the page with both the users list and current user info
     res.render('users', { 
       users: users,
       currentUser: currentUser 
