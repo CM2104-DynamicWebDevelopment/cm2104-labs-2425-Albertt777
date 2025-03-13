@@ -35,7 +35,26 @@
   <footer>
     <%- include('../partials/footer')%>
   </footer>
-
+  
+    <!-- Welcome section for logged-in user -->
+    <div class="welcome-section">
+      <h2>Welcome, <%= currentUser.username || currentUser.name || 'User' %>!</h2>
+      <p>You are logged in as: <%= currentUser.email %></p>
+    </div>
+  
+    <!-- Existing user profiles list -->
+    <h1>User Profiles</h1>
+    <div class="user-list">
+      <% users.forEach(function(user) { %>
+        <div class="user-card">
+          <h3><%= user.username || user.name %></h3>
+          <p>Email: <%= user.email %></p>
+          
+          <!-- Other user information -->
+        </div>
+      <% }); %>
+    </div>
+  
 </body>
 
 </html>
